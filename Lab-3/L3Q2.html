@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L3Q2</title>
+</head>
+<body>
+    <div>
+        enter text : <input type="text" id="tb1"><br><br>
+        <button onclick="pig()">convert</button><br><br>
+        <input type="text" id="out1">
+    </div>
+    
+    <script>
+        var tb1 = document.getElementById('tb1');
+        var out1 = document.getElementById('out1');
+
+        function pig() {
+            var a = tb1.value[0];
+            var str1 = tb1.value.slice(1);
+            var str2 = str1.concat(a);
+            var str3 = str2.concat("ay");
+            out1.value = str3;
+        }
+    </script>
+    
+</body>
+</html>

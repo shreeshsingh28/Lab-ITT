@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test 1</title>
+</head>
+<body>
+    <div>
+        enter text : <input type="text" id="tb1"><br><br>
+        <input type="button" id="btn1" value="click"><br><br>
+        <input type="text" id="out2">
+        <p id="output1"></p>
+    </div>
+    
+    <script>
+        var tb1 = document.getElementById('tb1');
+        var btn1 = document.getElementById('btn1');
+        var out1 = document.getElementById('output1');
+
+        function fun1() {
+            document.getElementById("out2").value = tb1.value;
+        }
+
+        btn1.addEventListener('click',fun1);
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Subject Selection</title>
+</head>
+<body>
+
+<h1>Subject Selection for Students</h1>
+
+<form id="subjectForm">
+    <label for="numStudents">Enter number of students:</label>
+    <input type="number" id="numStudents" name="numStudents" min="1" required>
+    <button type="button" onclick="generateForm()">Generate Form</button>
+</form>
+<div id ="div1"></div>
+<p id ="dis">hello</p>
+<script>
+    let subjects = ["Coursera", "AIML", "Web Development", "App Development", "PE"]
+    
+function generateForm() {
+    var numStudents = document.getElementById("numStudents").value;
+    
+    for(let j =0;j<numStudents;j++){
+        let divv = document.createElement("div");
+        divv.textContent="Student  "+j +"   ";
+        for(let i =0;i<5;i++){
+            let selection = document.createElement("input");
+            let label = document.createElement("label");
+            selection.setAttribute("type", "radio");
+            selection.setAttribute("name", "subject"+j);
+            selection.setAttribute("value", subjects[i]);
+            selection.addEventListener("change", function(event) {
+                    calling(event, j); // Pass j to the calling function
+                });
+            label.textContent=subjects[i];
+            divv.appendChild(label);
+            divv.appendChild(selection);
+        }
+        document.getElementById("div1").appendChild(divv);
+    }
+}
+function calling(event,j) {
+                document.getElementById("dis").innerHTML+= "Student " + (j+1) + " selected: " + event.target.value;
+    }
+</script>
+
+</body>
+</html

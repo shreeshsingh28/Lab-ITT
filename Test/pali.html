@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palindrome</title>
+</head>
+<body>
+    enter text: <input type="text" id="tb1"><br>
+    <button onclick="pali()">check</button><br>
+    <p id="out1"></p>
+
+    <script>
+        function pali(){
+            var tb1 = document.getElementById("tb1").value;
+            var rev = "";
+            
+            var j = 0; 
+            for(var i = tb1.length-1 ; i >= 0; i--){
+                rev = rev.concat(tb1[i]);
+            }
+
+            if (rev == tb1) {
+                document.getElementById("out1").innerHTML = "palindrome";
+            }
+            else{
+                document.getElementById("out1").innerHTML = "not palindrome";
+            }
+        }
+    </script>
+    
+</body>
+</html>

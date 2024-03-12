@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Text Boxes</title>
+</head>
+<body>
+    <div>
+        Enter the number of text boxes: <input type="text" id="numInput"><br><br>
+        <button onclick="generateTextBoxes()">generate</button><br><br>
+        <div id="textBoxContainer"></div>
+    </div>
+
+    <script>
+        var numInput = document.getElementById('numInput');
+        var textBoxContainer = document.getElementById('textBoxContainer');
+
+        function generateTextBoxes() {
+            // Clear existing text boxes
+            textBoxContainer.innerHTML = '';
+
+            // Get the number of text boxes to generate
+            var numBoxes = parseInt(numInput.value);
+
+            // Generate text boxes
+            for (var i = 0; i < numBoxes; i++) {
+                var textBox = document.createElement('input');
+                textBox.type = 'text';
+                textBox.placeholder = 'Text Box ' + (i + 1);
+                textBoxContainer.appendChild(textBox);
+                textBoxContainer.appendChild(document.createElement('br'));
+            }
+        }
+    </script>
+</body>
+</html>
